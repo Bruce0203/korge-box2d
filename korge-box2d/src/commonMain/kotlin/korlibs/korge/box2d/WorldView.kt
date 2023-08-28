@@ -173,7 +173,7 @@ inline fun <T : View> T.registerBodyWithFixture(
     angularVelocity: Number = 0.0,
     linearVelocityX: Number = 0.0,
     linearVelocityY: Number = 0.0,
-    linearDamping: Number = 0.0,
+    linearDamping: Vec2 = Vec2(),
     angularDamping: Number = 0.0,
     gravityScale: Number = 1.0,
     shape: Shape? = null,
@@ -197,7 +197,7 @@ inline fun <T : View> T.registerBodyWithFixture(
         this.angularVelocity = angularVelocity.toFloat()
         this.position.set(x.toFloat(), y.toFloat())
         this.linearVelocity.set(linearVelocityX.toFloat(), linearVelocityY.toFloat())
-        this.linearDamping = linearDamping.toFloat()
+        this.linearDamping = linearDamping
         this.angularDamping = angularDamping.toFloat()
         this.gravityScale = gravityScale.toFloat()
         this.allowSleep = allowSleep

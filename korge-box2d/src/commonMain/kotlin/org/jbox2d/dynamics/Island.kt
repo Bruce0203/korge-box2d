@@ -284,8 +284,8 @@ class Island {
                 // v2 = exp(-c * dt) * v1
                 // Pade approximation:
                 // v2 = v1 * 1 / (1 + c * dt)
-                v.x *= 1.0f / (1.0f + h * b.m_linearDamping)
-                v.y *= 1.0f / (1.0f + h * b.m_linearDamping)
+                v.x *= 1.0f / (1.0f + h * b.m_linearDamping.x)
+                v.y *= 1.0f / (1.0f + h * b.m_linearDamping.y)
                 w *= 1.0f / (1.0f + h * b.m_angularDamping)
             }
 

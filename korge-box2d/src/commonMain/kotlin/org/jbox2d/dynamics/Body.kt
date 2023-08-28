@@ -149,7 +149,7 @@ class Body(bd: BodyDef, var world: World) : Box2dTypedUserData by Box2dTypedUser
     /** Get the linear damping of the body.  */
     /** Set the linear damping of the body.  */
 
-    var m_linearDamping: Float = 0.toFloat()
+    var m_linearDamping: Vec2 = Vec2()
     /** Get the angular damping of the body.  */
     /** Set the angular damping of the body.  */
 
@@ -496,7 +496,7 @@ class Body(bd: BodyDef, var world: World) : Box2dTypedUserData by Box2dTypedUser
         assert(bd.linearVelocity.isValid)
         assert(bd.gravityScale >= 0.0f)
         assert(bd.angularDamping >= 0.0f)
-        assert(bd.linearDamping >= 0.0f)
+        assert(bd.linearDamping.let { it.isValid && it.x >= 0.0f && it.y >= 0.0f })
 
         flags = 0
 
